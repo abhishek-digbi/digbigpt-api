@@ -1,0 +1,215 @@
+{
+  "name": "DigbiGPT - Claims Assistant",
+  "description": "AI assistant for analyzing healthcare claims data. Ask questions about medication costs, disease cohorts, clinical histories, and population health metrics.",
+  "instructions": "You are DigbiGPT, a specialized AI assistant for healthcare claims data analysis. You help medical professionals, customer success teams, and leadership answer clinical and business questions using real claims data.\n\n## Your Capabilities:\n- Analyze medication costs and utilization patterns\n- Provide disease cohort summaries and population health insights\n- Answer questions about clinical histories and timelines\n- Identify duplicate medications and safety concerns\n- Generate auditable reports with both tables and plain-English summaries\n\n## Key Principles:\n1. **Always use real data** - Never guess or make up numbers\n2. **Provide both table and summary** - Give structured data plus plain-English explanation\n3. **Protect privacy** - Automatically redact PHI (names, DOBs, SSNs)\n4. **Be auditable** - All queries are logged for compliance\n5. **Use pre-vetted queries** - Only execute approved, safe SQL queries\n\n## Available Tools:\n- **Drug Spend Analysis**: Find highest spenders on specific medications\n- **Disease Cohort Analysis**: Get population health metrics for disease groups\n- **Clinical History**: Analyze member diagnosis patterns and timelines\n- **GI Medication Tracking**: Identify new starts and utilization patterns\n- **Duplicate Medication Detection**: Find potential safety issues\n\n## Response Format:\nAlways provide:\n1. **Plain-English Summary**: What the data shows in business terms\n2. **Structured Table**: The actual data with clear column headers\n3. **Key Insights**: What this means for decision-making\n4. **Confidence Level**: How reliable the data is\n\n## Example Questions:\n- \"Which customers spent the most on rosuvastatin in 2024?\"\n- \"Show me the hypertension cohort summary for 2023\"\n- \"How many members started GI medications in Q1 2024?\"\n- \"Find members on duplicate statin medications\"\n\nRemember: You're helping healthcare professionals make data-driven decisions while maintaining the highest standards of privacy and compliance.",
+  "model": "gpt-4o",
+  "temperature": 0.1,
+  "top_p": 0.9,
+  "max_tokens": 2000,
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "ask_digbigpt",
+        "description": "Ask DigbiGPT a question about healthcare claims data. Use this for all claims-related queries including drug spend analysis, disease cohort summaries, clinical histories, and population health metrics.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "question": {
+              "type": "string",
+              "description": "The natural language question about claims data. Be specific about what you want to analyze (e.g., drug names, time periods, disease categories)."
+            },
+            "user_id": {
+              "type": "string",
+              "description": "User identifier for audit logging. Use a consistent identifier for the user."
+            }
+          },
+          "required": ["question", "user_id"]
+        }
+      }
+    }
+  ],
+  "actions": [
+    {
+      "name": "ask_digbigpt",
+      "description": "Ask DigbiGPT a question about healthcare claims data",
+      "url": "https://your-deployed-api-url.com/digbigpt/ask",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "question": "{{question}}",
+        "user_id": "{{user_id}}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{$env.API_KEY}}"
+      }
+    }
+  ],
+  "openapi_spec": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "DigbiGPT API",
+      "description": "Claims database query API for DigbiGPT",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://your-deployed-api-url.com",
+        "description": "Production server"
+      }
+    ],
+    "paths": {
+      "/digbigpt/ask": {
+        "post": {
+          "summary": "Ask DigbiGPT a question about claims data",
+          "description": "Process a natural language query about healthcare claims data and return structured results with both tabular data and plain-English summaries.",
+          "operationId": "askDigbiGPT",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Natural language question about claims data"
+                    },
+                    "user_id": {
+                      "type": "string",
+                      "description": "User identifier for audit logging"
+                    }
+                  },
+                  "required": ["question", "user_id"]
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "answer": {
+                        "type": "string",
+                        "description": "Plain-English summary of the results"
+                      },
+                      "table": {
+                        "type": "object",
+                        "properties": {
+                          "columns": {
+                            "type": "array",
+                            "items": {"type": "string"}
+                          },
+                          "rows": {
+                            "type": "array",
+                            "items": {"type": "array"}
+                          }
+                        },
+                        "description": "Structured data with columns and rows"
+                      },
+                      "sql_executed": {
+                        "type": "string",
+                        "description": "The SQL query that was executed"
+                      },
+                      "confidence": {
+                        "type": "number",
+                        "description": "Confidence score (0.0-1.0)"
+                      },
+                      "agent_used": {
+                        "type": "string",
+                        "description": "Which agent handled the query"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "detail": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal server error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "detail": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/health": {
+        "get": {
+          "summary": "Health check",
+          "description": "Check if the DigbiGPT API service is healthy",
+          "operationId": "healthCheck",
+          "responses": {
+            "200": {
+              "description": "Service is healthy",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {"type": "string"},
+                      "service": {"type": "string"},
+                      "claims_server": {"type": "string"},
+                      "timestamp": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "environment_variables": {
+    "API_KEY": "your-api-key-here"
+  },
+  "deployment_notes": {
+    "description": "Configuration for deploying DigbiGPT as a Custom GPT in ChatGPT Enterprise",
+    "steps": [
+      "1. Deploy the DigbiGPT API service to a publicly accessible URL (e.g., Railway, Render, AWS Lambda)",
+      "2. Update the 'url' field in the actions section with your deployed API URL",
+      "3. Set up authentication (API key or OAuth) and update the authentication section",
+      "4. Import this configuration into ChatGPT Enterprise",
+      "5. Test with sample questions to ensure everything works correctly"
+    ],
+    "required_services": [
+      "DigbiGPT API Service (digbigpt_api.py)",
+      "Claims Server (poc/server.py)",
+      "DuckDB Database (claims.db)"
+    ],
+    "deployment_options": [
+      "Railway.app - Easy deployment with automatic HTTPS",
+      "Render.com - Free tier available, good for testing",
+      "AWS Lambda - Serverless option with API Gateway",
+      "DigitalOcean App Platform - Simple container deployment",
+      "Heroku - Traditional PaaS option"
+    ]
+  }
+}

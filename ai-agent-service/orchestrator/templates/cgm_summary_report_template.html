@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Glucose & Meal Story</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700,800" rel="stylesheet" />
+    <style>
+      :root {
+      --brand-blue1: #3E14B6;
+      --brand-blue2: #4c84ff;
+      --brand-light-blue: #dbeafe;
+      --brand-yellow: #ffc720;
+      --brand-red: #fc5834;
+      --brand-green: #00cc91;
+      --card-bg: #FFFFFF;
+      --brand-font: #707070;
+      --summary-bg: #FAFAFA;
+      --glucose-very-high: #FE7E02;
+      --glucose-very-low: #DD3712;
+      }
+      body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0; padding: 0;
+      color: var(--brand-font);
+      background: var(--summary-bg);
+      max-width: 1240px;
+      }
+      strong {
+      font-weight: 700; /* Use bold, not extrabold for inline content */
+      }
+      .report-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 20px 0 20px 30px;
+      text-align: left;
+      }
+      .report-card{ 
+      display:flex; 
+      flex-direction:column; 
+      width:100%; 
+      background:var(--summary-bg); 
+      margin-bottom:20px; 
+      padding:.1rem; 
+      border-radius:32px; 
+      }
+      .card-inner {
+      background: var(--card-bg);
+      border: 2px solid var(--summary-bg);
+      border-radius: 48px 48px 48px 48px;
+      margin-left: 30px; 
+      margin-right: 30px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      }
+      .card-header {
+      background-color: var(--card-bg);
+      padding-left: 1.5rem;
+      border-bottom: 1px solid var(--summary-bg);
+      text-align: left;
+      }
+      .card-title {
+      background-color: var(--card-bg);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--brand-font);
+      margin: 40px 30px 20px 30px;
+      text-align: left;
+      }
+      .chartjs-legend li span{
+      background-color: var(--card-bg);
+      color: var(--brand-font);
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: 600;
+      text-align: left;
+      margin: 5px 0px 40px 0px;
+      }
+      .card-content {
+      background-color: var(--card-bg);
+      text-align: left;
+      color: var(--brand-font);
+      font-size: 15px;
+      font-weight: 600;
+      margin: 5px 30px 40px 30px;
+      }
+      .sticky-nav {
+      position: sticky;
+      bottom: 0;
+      background: #f9fafb;
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column; /* change from row to column */
+      gap: 12px; /* spacing between title and buttons */
+      z-index: 10;
+      border-top: none; /* remove the top border */
+      }
+      /* Title Section */
+      .footer-title {
+      width: 100%;
+      }
+      .footer-heading {
+      font-weight: 800;
+      font-size: 18px;
+      }
+      .footer-subheading {
+      font-size: 15px;
+      }
+      /* Buttons Section */
+      .footer-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      }
+      .footer-buttons-left,
+      .footer-buttons-right {
+      display: flex;
+      gap: 0.5rem;
+      }
+      .footer-buttons button {
+      height: 44px; /* taller button height */
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      padding: 0 20px;
+      }
+      /* Individual Button Styles */
+      .footer-link {
+      background: transparent;
+      color: var(--brand-blue2);
+      }
+      .footer-prev {
+      background: #eef2ff;
+      color: var(--brand-blue2);
+      }
+      .footer-next {
+      background: var(--brand-blue2);
+      color: white;
+      }
+      .metric-label { font-size: 1rem; font-weight: 800; }
+      .metric-sublabel {
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding-bottom: 0.1px;
+      }
+      .chart-box { height: 200px; margin-bottom: 1rem; }
+      canvas {
+      width: 100% !important;
+      height: auto !important;
+      }
+      .tir-donut-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 16px auto 20px;   /* centers horizontally */
+      padding: 0 16px;           /* side padding for small screens */
+      max-width: 520px;          /* keep it tidy on desktop */
+      }
+      /* Each legend row */
+      .legend-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* label left, value right */
+      margin: 0px 30px 0px 30px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Open Sans', sans-serif;
+      color: var(--brand-font);
+      }
+      /* Color dot */
+      .legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+      margin-right: 10px;
+      flex-shrink: 0;
+      }
+      /* Label text */
+      .legend-label {
+      flex-grow: 1;
+      padding-left: 2px;
+      text-align: left;
+      }
+      /* Value text */
+      .legend-value {
+      text-align: right;
+      min-width: 20px;
+      }
+      .badge {
+      display: inline-block;
+      border: 2px solid #FE7E02;
+      border-radius: 9999px;
+      padding: 2px 12px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 0.5rem;
+      }
+      .label-champion,
+      .label-challenge,
+      .label-least_helpful_meals,
+      .label-best_performing_meals,
+      .metric-badge_consistent,
+      .metric-badge_fairlyconsistent,
+      .metric-badge_inconsistent{
+      display: inline-flex;
+      align-items: left;
+      font-size: 1.0rem;
+      font-weight: 700;
+      padding: 0.25rem 0.5rem;
+      border-radius: 32px 32px 32px 32px;
+      line-height: 1;
+      margin-bottom: 1rem;
+      }
+     .metric-badge {
+      flex: 1 1 auto;
+      min-width: 75px;
+      max-width: 100%;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background-color: var(--card-bg);
+      border: 3px solid #B8B8B8;
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.4;
+      text-align: left;
+      padding: 12px;
+      margin-bottom: 5px;
+     }
+      /* Champion */
+      .label-champion, 
+      .label-best_performing_meals,
+      .metric-badge_consistent{
+      margin-top: 20px;
+      background-color: var(--card-bg);
+      border: 3px solid var(--brand-green);
+      }
+      /* Challenge */
+      .label-challenge,
+      .label-least_helpful_meals,
+      .metric-badge_fairlyconsistent{
+      margin-top: 20px;
+      background-color: var(--card-bg);
+      border: 3px solid var(--brand-yellow);
+      }
+      .metric-badge_inconsistent{
+      margin-top: 20px;
+      background-color: var(--card-bg);
+      border: 3px solid var(--brand-red);
+      }
+      .takeaway-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);  /* 2 cards per row on larger screens */
+      gap: 2rem;
+      margin-bottom: 2rem;
+      }
+      .takeaway-metric {
+      text-align: left;
+      padding: 20px 30px 20px 30px;
+      border-radius: 48px 48px 48px 48px;
+      border: 3px solid;
+      color: inherit; /* default fallback */
+      }
+      /* Grey Card */
+      .takeaway-metric.grey {
+      background-color: var(--summary-bg);
+      border: 0px;
+      }
+      /* Green Card */
+      .takeaway-metric.green {
+      border: 3px solid var(--brand-green);
+      }
+      /* Yellow Card */
+      .takeaway-metric.yellow {
+      border: 3px solid var(--brand-yellow)
+      }
+      /* Red Card */
+      .takeaway-metric.red {
+      border: 3px solid var(--brand-red);
+      }
+      .takeaway-metric .metric-value {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      }
+      .takeaway-metric .metric-label {
+      font-size: 1.1rem;
+      }
+      .takeaway-metric .metric-sublabel {
+      margin-top: 0.5rem;
+      color: inherit;
+      font-size: 0.9rem;
+      font-weight: 400;
+      }
+      @media (max-width: 900px) {
+      .metrics-badges {
+      flex-direction: column;
+      align-items: center;
+      }
+      .takeaway-grid {
+      grid-template-columns: 1fr;
+      }
+      }
+      .link-button {
+      background-color: #eef4ff;
+      color: #3E82FF;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 12px 20px;
+      border-radius: 16px;
+      border: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      transition: background 0.2s ease;
+      }
+      .link-button:hover {
+      background-color: #dbe9ff;
+      color: #1c6eea;
+      }
+      .overview-links {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 20px;
+      }
+      .arrow {
+      font-size: 1.2rem;
+      font-weight: 900;
+      line-height: 1;
+      vertical-align: middle;
+      position: relative;
+      display: inline-block;
+      top: -1px; /* Fine-tune alignment if needed */
+      margin-right: 0.25rem;
+      color: var(--brand-blue2);
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script>
+      // Preloaded chart data (injected later by Python)
+      const glucoseRangePercentages = {
+        time_in_range_percent: 0,
+        time_in_low_percent: 0,
+        time_very_low_percent: 0,
+        time_in_high_percent: 0,
+        time_in_very_high_percent: 0,
+      };
+    
+      const timeBlockPatterns = [
+        { time_block: "Midnight", mean_glucose: 0 },
+        { time_block: "Morning", mean_glucose: 0 },
+        { time_block: "Afternoon", mean_glucose: 0 },
+        { time_block: "Evening", mean_glucose: 0 },
+      ];
+    
+      const sectionsMeta = {};
+      let tirChart;
+    
+      /* -------------------------------
+         SECTION META + NAVIGATION
+      --------------------------------*/
+      function buildSectionsMeta() {
+        const sectionElements = Array.from(document.querySelectorAll("section.report-card"));
+        sectionElements.forEach((section, index) => {
+          const id = section.id;
+          const titleEl = section.querySelector(".card-title");
+          const title = titleEl ? titleEl.textContent.trim() : "Contents";
+          const prev = sectionElements[index - 1]?.id;
+          const next = sectionElements[index + 1]?.id;
+    
+          sectionsMeta[id] = {
+            title,
+            ...(prev && { prev }),
+            ...(next && { next }),
+            ...(index === sectionElements.length - 1 && { backToOverview: true }),
+          };
+        });
+      }
+    
+      function populateOverviewLinks() {
+        const list = document.querySelector(".overview-links");
+        if (!list) return;
+        list.innerHTML = "";
+        Object.entries(sectionsMeta).forEach(([id, meta]) => {
+          if (id === "overview") return;
+          const li = document.createElement("li");
+          li.innerHTML = `<button class="link-button" onclick="showSection('${id}')">${meta.title} <span class='arrow'>→</span></button>`;
+          list.appendChild(li);
+        });
+      }
+    
+      function showSection(id) {
+        document.querySelectorAll(".report-card").forEach((section) => {
+          section.style.display = section.id === id ? "block" : "none";
+        });
+        const target = document.getElementById(id);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (id === "tir") {
+          requestAnimationFrame(() => setTimeout(renderTirDonut, 0));
+        }
+      }
+    
+      /* -------------------------------
+         TIR DONUT CHART
+      --------------------------------*/
+      function renderTirDonut() {
+        const section = document.getElementById("tir");
+        const canvas = document.getElementById("tirDonut");
+        const legendContainer = document.getElementById("tirDonutLegend");
+        if (!section || !canvas || !legendContainer) return;
+    
+        const isHidden = window.getComputedStyle(section).display === "none";
+        if (isHidden) return;
+    
+        if (tirChart && typeof tirChart.destroy === "function") {
+          tirChart.destroy();
+          tirChart = null;
+        }
+    
+        const ctx = canvas.getContext("2d");
+        const style = getComputedStyle(document.documentElement);
+        const bodyStyle = getComputedStyle(document.body);
+    
+        const colors = {
+          veryHigh: style.getPropertyValue("--glucose-very-high").trim(),
+          high: style.getPropertyValue("--brand-yellow").trim(),
+          inRange: style.getPropertyValue("--brand-green").trim(),
+          low: style.getPropertyValue("--brand-red").trim(),
+          veryLow: style.getPropertyValue("--glucose-very-low").trim(),
+          fontColor: style.getPropertyValue("--brand-font").trim(),
+          fontFamily: bodyStyle.getPropertyValue("font-family") || "'Open Sans', sans-serif",
+        };
+    
+        const labels = ["Very high", "High", "In range", "Low", "Very low"];
+        const data = [
+          glucoseRangePercentages.time_in_very_high_percent,
+          glucoseRangePercentages.time_in_high_percent,
+          glucoseRangePercentages.time_in_range_percent,
+          glucoseRangePercentages.time_in_low_percent,
+          glucoseRangePercentages.time_very_low_percent,
+        ];
+    
+        const backgroundColors = [colors.veryHigh, colors.high, colors.inRange, colors.low, colors.veryLow];
+        const inRangeIndex = labels.indexOf("In range");
+    
+        tirChart = new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels,
+            datasets: [
+              {
+                data,
+                backgroundColor: backgroundColors,
+                borderWidth: 0,
+                borderRadius: data.map((_, i) => (i === inRangeIndex ? 12 : 0)),
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: "50%",
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  title: () => "",
+                  label: (c) => `${c.label || ""}: ${(c.raw || 0).toFixed(1)}%`,
+                },
+                backgroundColor: "#ffffff",
+                borderColor: "#e5e7eb",
+                borderWidth: 1,
+                titleColor: "#000",
+                bodyColor: colors.fontColor,
+                titleFont: { weight: "bold", family: colors.fontFamily },
+                bodyFont: { weight: "800", family: colors.fontFamily },
+                padding: 10,
+              },
+            },
+            animation: { duration: 600, easing: "easeOutQuart" },
+          },
+        });
+    
+        legendContainer.innerHTML = labels
+          .map((label, i) => {
+            const color = backgroundColors[i];
+            const value = data[i].toFixed(1) + "%";
+            return `
+              <div class="legend-row">
+                <span class="legend-dot" style="background-color:${color};"></span>
+                <span class="legend-label">${label}</span>
+                <span class="legend-value">${value}</span>
+              </div>`;
+          })
+          .join("");
+      }
+    
+      /* -------------------------------
+         TIME-OF-DAY LINE CHART
+      --------------------------------*/
+      function renderTimeOfDayLine() {
+        const canvas = document.getElementById("timeOfDayLine");
+        if (!canvas) return;
+    
+        const ctx = canvas.getContext("2d");
+        const style = getComputedStyle(document.documentElement);
+    
+        const lineColor = style.getPropertyValue("--brand-blue2").trim();
+        const fillColorTop = style.getPropertyValue("--brand-light-blue").trim();
+        const pointFillColor = style.getPropertyValue("--card-bg").trim();
+        const axisLineColor = style.getPropertyValue("--brand-font").trim();
+        const fontColor = style.getPropertyValue("--brand-font").trim();
+    
+        const labels = ["Midnight", "Morning", "Afternoon", "Evening"];
+        const meanGlucoseData = labels.map((label) => {
+          const found = timeBlockPatterns.find((d) => d.time_block === label);
+          return found ? found.mean_glucose : 0;
+        });
+    
+        const minGlucose = Math.min(...meanGlucoseData);
+        const maxGlucose = Math.max(...meanGlucoseData);
+        const yMin = Math.max(50, Math.floor(minGlucose - 10));
+        const yMax = Math.ceil(maxGlucose + 10);
+    
+        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, fillColorTop);
+        gradient.addColorStop(1, "rgba(255,255,255,0)");
+    
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels,
+            datasets: [
+              {
+                label: "Average Glucose (mg/dL)",
+                data: meanGlucoseData,
+                borderColor: lineColor,
+                backgroundColor: gradient,
+                tension: 0.35,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                pointBackgroundColor: pointFillColor,
+                pointBorderColor: lineColor,
+                pointHoverBackgroundColor: pointFillColor,
+                pointHoverBorderColor: lineColor,
+                pointBorderWidth: 2,
+                pointHoverBorderWidth: 3,
+                fill: true,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: "nearest", intersect: false },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  title: (ctx) => ctx[0].label,
+                  label: (ctx) => `Average Glucose: ${ctx.raw.toFixed(1)} mg/dL`,
+                },
+                backgroundColor: style.getPropertyValue("--card-bg").trim(),
+                titleColor: fontColor,
+                borderColor: axisLineColor,
+                borderWidth: 1,
+                padding: 12,
+                titleFont: { weight: "bold" },
+                bodyColor: fontColor,
+              },
+            },
+            scales: {
+              y: {
+                suggestedMin: yMin,
+                suggestedMax: yMax,
+                ticks: { stepSize: 10, color: fontColor, padding: 10 },
+                grid: { color: axisLineColor, lineWidth: 1, drawTicks: true, drawBorder: false },
+              },
+              x: {
+                ticks: { color: fontColor, padding: 10, maxRotation: 0, minRotation: 0 },
+                grid: { color: axisLineColor, lineWidth: 1, drawTicks: false, drawBorder: false },
+              },
+            },
+            animations: {
+              tension: {
+                duration: 800,
+                easing: "easeOutQuart",
+                from: 0.3,
+                to: 0.35,
+                loop: false
+              }
+            }
+          },
+        });
+      }
+    
+      /* -------------------------------
+         STICKY FOOTER NAV
+      --------------------------------*/
+      function addStickyNavs() {
+        Object.keys(sectionsMeta).forEach((id) => {
+          const section = document.getElementById(id);
+          if (!section) return;
+          const meta = sectionsMeta[id];
+    
+          const nav = document.createElement("div");
+          nav.className = "sticky-nav";
+    
+          const nextMeta = meta.next ? sectionsMeta[meta.next] : null;
+          const subheading = nextMeta ? nextMeta.title : "";
+    
+          const title = `
+            <div class="footer-title">
+              <div class="footer-heading">${meta.title}</div>
+              <div class="footer-subheading">${subheading}</div>
+            </div>`;
+    
+          const isFirst = id === "overview";
+          const isLast = meta.backToOverview;
+    
+          let leftButtons = "";
+          let rightButtons = "";
+    
+          if (isFirst) {
+            rightButtons = `<button class="footer-next" onclick="showSection('${meta.next}')">Next</button>`;
+          } else if (isLast) {
+            leftButtons = `
+              <button class="footer-link" onclick="showSection('overview')">
+                <span class="arrow">←</span>Contents
+              </button>`;
+            rightButtons = `<button class="footer-prev" onclick="showSection('${meta.prev}')">Prev</button>`;
+          } else {
+            leftButtons = `
+              <button class="footer-link" onclick="showSection('overview')">
+                <span class="arrow">←</span>Contents
+              </button>`;
+            rightButtons = `
+              ${meta.prev ? `<button class="footer-prev" onclick="showSection('${meta.prev}')">Prev</button>` : ""}
+              ${meta.next ? `<button class="footer-next" onclick="showSection('${meta.next}')">Next</button>` : ""}`;
+          }
+    
+          nav.innerHTML = `
+            <div class="footer-title-block">${title}</div>
+            <div class="footer-buttons-block">
+              <div class="footer-buttons">
+                <div class="footer-buttons-left">${leftButtons}</div>
+                <div class="footer-buttons-right">${rightButtons}</div>
+              </div>
+            </div>`;
+          section.appendChild(nav);
+        });
+      }
+    
+      /* -------------------------------
+         INITIALIZE ON LOAD
+      --------------------------------*/
+      document.addEventListener("DOMContentLoaded", () => {
+        buildSectionsMeta();
+        populateOverviewLinks();
+        addStickyNavs();
+        renderTimeOfDayLine();
+        showSection("overview");
+    
+        const tir = document.getElementById("tir");
+        if (tir) {
+          const io = new IntersectionObserver(([e]) => {
+            if (e.isIntersecting) {
+              renderTirDonut();
+              io.disconnect();
+            }
+          }, { rootMargin: "0px 0px -20% 0px" });
+          io.observe(tir);
+        }
+      });
+    
+      window.addEventListener("orientationchange", () => {
+        if (document.getElementById("tir")?.style.display !== "none") renderTirDonut();
+      });
+    
+      window.addEventListener("resize", () => {
+        if (document.getElementById("tir")?.style.display !== "none") renderTirDonut();
+      });
+    </script>
+
+  </head>
+  <body>
+      <!-- AI-injected HTML goes here -->${report_content}
+  </body>
+</html>

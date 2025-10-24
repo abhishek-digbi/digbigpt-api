@@ -1,0 +1,1 @@
+python mcp_llm_bridge.py "top 5 disease categories for Acme Corp" --mcp http://127.0.0.1:8811/mcp/
