@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter, Request, HTTPException
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Dict, Any
 import logging
 
 logger = logging.getLogger(__name__)
@@ -14,7 +14,7 @@ class DigbiGPTRequest(BaseModel):
     """Request model for DigbiGPT questions."""
     question: str
     user_id: str
-    context_id: Optional[str] = None
+    context: Optional[Dict[str, Any]] = None
 
 
 @router.post("/digbigpt/ask")
@@ -38,7 +38,7 @@ async def ask_digbigpt(request_data: DigbiGPTRequest, req: Request):
         result = await digbigpt.process_query(
             question=request_data.question,
             user_id=request_data.user_id,
-            context_id=request_data.context_id
+            context=request_data.context
         )
         
         return result
