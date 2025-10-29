@@ -45,7 +45,7 @@ def _fetch_agent_row(agent_id: str) -> dict | None:
 
 def _load_from_yaml(agent_id: str) -> AgentConfig:
     """Load agent configuration from YAML file as fallback when database unavailable."""
-    yaml_file = Path(__file__).parent / "agents_seed.yaml"
+    yaml_file = Path(__file__).parent.parent / "agents_seed.yaml"
     if not yaml_file.exists():
         raise FileNotFoundError(f"Agents YAML file not found: {yaml_file}")
     
