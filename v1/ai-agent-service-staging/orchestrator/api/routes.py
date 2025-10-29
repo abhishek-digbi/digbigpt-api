@@ -15,6 +15,9 @@ from orchestrator.api.controllers.vector_store_controller import (
 from orchestrator.api.controllers.tool_controller import (
     router as tool_router,
 )
+from orchestrator.api.controllers.digbigpt_controller import (
+    router as digbigpt_router,
+)
 
 router = APIRouter()
 
@@ -24,3 +27,4 @@ router.include_router(meal_rating_router, prefix="/api", tags=["Meal Rating"])
 router.include_router(agent_router, prefix="/api", tags=["Agents"])
 router.include_router(vector_store_router, prefix="/api", tags=["Vector Store"])
 router.include_router(tool_router, prefix="/api", tags=["Tools"])
+router.include_router(digbigpt_router, prefix="/api", tags=["DigbiGPT"])

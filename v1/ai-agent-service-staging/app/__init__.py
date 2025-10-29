@@ -26,6 +26,7 @@ from orchestrator.orchestrators.unified_support_agent import UnifiedSupportAgent
 from orchestrator.orchestrators.summarizer_agent import SummarizerAgent
 from orchestrator.orchestrators.renewal_agent import RenewalAgent
 from orchestrator.orchestrators.cgm_summary_report_agent import CGMSummaryReportAgent
+from orchestrator.orchestrators.digbigpt_orchestrator import DigbiGPTOrchestrator
 from orchestrator.services.database_agent_logger import DatabaseAgentLogger
 import redis
 
@@ -149,6 +150,9 @@ def create_app(db_client: DBClient | None = None):
         recipe_agent,
         terminal_agents=terminal_agents,
     )
+    
+    # Initialize DigbiGPT orchestrator for claims analysis
+    digbigpt_orchestrator = DigbiGPTOrchestrator(ai_core_service)
 
     # Store agents globally in the app context
     app.state.AGENTS = {
@@ -165,7 +169,8 @@ def create_app(db_client: DBClient | None = None):
         "cgm_summary_report_agent": cgm_summary_report_agent,
         "summarizer_agent": summarizer_agent,
         edutainment_agent_gus.agent_id: edutainment_agent_gus,
-        unified_support_agent.agent_id: unified_support_agent
+        unified_support_agent.agent_id: unified_support_agent,
+        "digbigpt_orchestrator": digbigpt_orchestrator
     }
 
     app.state.AI_CORE_SERVICE = ai_core_service
