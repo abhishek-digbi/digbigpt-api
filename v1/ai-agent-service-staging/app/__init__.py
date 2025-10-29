@@ -53,7 +53,12 @@ def create_app(db_client: DBClient | None = None):
 
     load_dotenv()
     if db_client is None:
-        db_client = DBClient()
+        try:
+            db_client = DBClient()
+            logger.info("Connected to PostgreSQL for agent logs")
+        except Exception as e:
+            logger.warning(f"Could not connect to PostgreSQL for agent logs (using SQLite): {e}")
+            db_client = None
     app.state.DB_CLIENT = db_client
 
     # Ensure required tables exist and seed default agents if necessary
