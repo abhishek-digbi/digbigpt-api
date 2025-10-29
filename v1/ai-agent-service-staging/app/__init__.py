@@ -35,6 +35,10 @@ from orchestrator.repositories.agent_logs_repository import AgentLogsRepository
 from utils.db import DBClient
 from utils.db_setup import initialize_database
 
+class NoOpAgentLogger:
+    def log_interaction(self, *args, **kwargs):
+        return
+
 def create_app(db_client: DBClient | None = None):
     # enable_verbose_stdout_logging()
     app = FastAPI(
@@ -92,9 +96,12 @@ def create_app(db_client: DBClient | None = None):
     adapter_registry = AdapterRegistry(openai_service)
     data_core = ToolService(db_client)
     
-    # Initialize logging components
-    agent_logs_repo = AgentLogsRepository(db_client)
-    agent_logger = DatabaseAgentLogger(agent_logs_repo)
+    # Initialize logging components (fallback to no-op if DB is unavailable)
+    if db_client is not None:
+        agent_logs_repo = AgentLogsRepository(db_client)
+        agent_logger = DatabaseAgentLogger(agent_logs_repo)
+    else:
+        agent_logger = NoOpAgentLogger()
     
     # Initialize AI Core Service with the logger
     ai_core_service = AiCoreService(
