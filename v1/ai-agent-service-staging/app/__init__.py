@@ -101,6 +101,7 @@ def create_app(db_client: DBClient | None = None):
         agent_logs_repo = AgentLogsRepository(db_client)
         agent_logger = DatabaseAgentLogger(agent_logs_repo)
     else:
+        agent_logs_repo = None
         agent_logger = NoOpAgentLogger()
     
     # Initialize AI Core Service with the logger
