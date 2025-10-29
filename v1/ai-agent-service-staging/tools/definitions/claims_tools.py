@@ -11,10 +11,12 @@ import os
 
 from tools.registry import tool
 
-# Determine the correct path to claims.db
+# Determine the correct path to claims database
+# Use sample database by default (smaller, suitable for deployment)
+# Set CLAIMS_DB_PATH environment variable to use full database
 CLAIMS_DB_PATH = os.getenv(
     "CLAIMS_DB_PATH",
-    str(Path(__file__).parent.parent.parent.parent / "data" / "claims.db")
+    str(Path(__file__).parent.parent.parent.parent / "data" / "claims_sample.db")
 )
 
 
