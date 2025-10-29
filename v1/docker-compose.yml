@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  digbigpt:
+    build: .
+    ports:
+      - "9000:9000"  # DigbiGPT API
+    environment:
+      - CLAIMS_DB_PATH=/app/data/claims.db
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=digbi_db
+      - DB_USER=digbi_user
+      - DB_PASSWORD=digbi_password
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    volumes:
+      - ./data/claims.db:/app/data/claims.db:ro
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=digbi_db
+      - POSTGRES_USER=digbi_user
+      - POSTGRES_PASSWORD=digbi_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    name: digbigpt-network

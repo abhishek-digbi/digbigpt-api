@@ -1,0 +1,1647 @@
+{
+  "message": null,
+  "result": {
+    "id": 1932672007546933248,
+    "reportId": "1439235900775311410",
+    "name": "Gut Monitoring Report",
+    "imageUrl": "https://cdn-01.digbihealth.com/imgs/reports/gut-monitoring/app-reports-gut-monitoring.png",
+    "overview": [
+      {
+        "id": 2,
+        "tabName": "TRAITS",
+        "content": [
+          {
+            "id": 1633783312830492672,
+            "title": "Traits Overview",
+            "description": "Your gut is home to millions of bacteria-some are helpful, and some can cause trouble. The helpful ones play essential roles like fighting off harmful germs, helping you digest food, and keeping your weight and energy balanced. When these good bacteria are present in high amounts, your body will likely stay healthy and strong. On the other hand, too many harmful bacteria can throw your gut off balance. \n\nThis can lead to inflammation, digestive problems, lower immunity, and even increase the risk of conditions like obesity, diabetes, and heart disease. In short, the more good bacteria you have and the fewer bad ones, the better your chances of feeling well and staying healthy.",
+            "imageUrl": "https://cdn-01.digbihealth.com/imgs/reports/mental-health/overview/overview-mh-01.png",
+            "type": "STATIC",
+            "categoryCode": "TRAITSOVERVIEW"
+          },
+          {
+            "id": 1633783313153454080,
+            "title": "Bacterial Diversity",
+            "description": "This section will help you understand how many different species of bacteria are in your gut. \n\nHigher diversity = healthier gut. ",
+            "imageUrl": "https://cdn-01.digbihealth.com/imgs/reports/gut-monitoring/overview/overview-gut-01point5.png",
+            "type": "TRAIT",
+            "categoryCode": "BACTERIALDIVERSITY"
+          },
+          {
+            "id": 1633783313245728768,
+            "title": "Beneficial Bacteria",
+            "description": "These are your gut's \"good guys\"-they support your mood, digestion, and immune system.",
+            "imageUrl": "https://cdn-01.digbihealth.com/imgs/reports/gut-monitoring/overview/overview-gut-02.png",
+            "type": "TRAIT",
+            "categoryCode": "BENEFICIALBACTERIA"
+          },
+          {
+            "id": 1633783313317031936,
+            "title": "Metabolism",
+            "description": "Your gut microbes make powerful chemicals that help your body burn fat, balance blood sugar, and even boost your mood and sleep.\n\nSome of these fight inflammation and support weight loss, while others can slow things down or raise disease risk. This report shows how your gut is affecting your metabolism and what you can do to improve it.",
+            "imageUrl": "https://cdn-01.digbihealth.com/imgs/reports/gut-monitoring/overview/overview-gut-03.png",
+            "type": "TRAIT",
+            "categoryCode": "METABOLISM"
+          },
+          {
+            "id": 1633783313409306624,
+            "title": "Food Tolerance",
+            "description": "Digbi's Gut Biome report will help you learn to identify foods that might cause intolerances. You'll also learn how to improve side effects, like bloating and gassiness, caused by food intolerances. ",
+            "imageUrl": "https://cdn-01.digbihealth.com/imgs/reports/gut-monitoring/overview/overview-gut-05.png",
+            "type": "TRAIT",
+            "categoryCode": "FOODTOLERANCE"
+          },
+          {
+            "id": 1901523284545523712,
+            "title": "Blood Sugar and Appetite",
+            "description": "Your gut bacteria help control how hungry you feel and how well your body handles sugar. They make special compounds that support hormones like GLP-1, which help you feel full and keep blood sugar steady. But some bacteria can also break these hormones down too fast. \n\nThis report shows how your gut influences your cravings, energy, and overall metabolic health.",
+            "imageUrl": "https://digbi-cdn-01.s3.us-east-1.amazonaws.com/imgs/reports/gut-monitoring/overview/overview-gut-06.png",
+            "type": "TRAIT",
+            "categoryCode": "BLOODSUGARANDAPPETITE"
+          }
+        ],
+        "tabDisplayName": "Traits"
+      }
+    ],
+    "reportCategories": [
+      {
+        "id": 4,
+        "name": "Bacterial Diversity",
+        "iconUrl": "https://cdn-01.digbihealth.com/imgs/reports/gut-monitoring/icon_report-toc-diversity.svg",
+        "code": "BACTERIALDIVERSITY",
+        "traits": [
+          17
+        ],
+        "commonTraits": [],
+        "summary": null,
+        "insight": null,
+        "link": null,
+        "categoryScore": null,
+        "categoryRisk": null,
+        "sampleDate": null,
+        "pastCategoryScores": null
+      },
+      {
+        "id": 5,
+        "name": "Beneficial Bacteria",
+        "iconUrl": "https://cdn-01.digbihealth.com/imgs/reports/gut-monitoring/icon_report-toc-beneficial-bacteria.svg",
+        "code": "BENEFICIALBACTERIA",
+        "traits": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "commonTraits": [],
+        "summary": null,
+        "insight": null,
+        "link": null,
+        "categoryScore": null,
+        "categoryRisk": null,
+        "sampleDate": null,
+        "pastCategoryScores": null
+      },
+      {
+        "id": 6,
+        "name": "Metabolism",
+        "iconUrl": "https://cdn-01.digbihealth.com/imgs/reports/gut-monitoring/icon_report-toc-metabolism.svg",
+        "code": "METABOLISM",
+        "traits": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          16,
+          26,
+          37,
+          38,
+          39
+        ],
+        "commonTraits": [],
+        "summary": null,
+        "insight": null,
+        "link": null,
+        "categoryScore": null,
+        "categoryRisk": null,
+        "sampleDate": null,
+        "pastCategoryScores": null
+      },
+      {
+        "id": 7,
+        "name": "Food Tolerance",
+        "iconUrl": "https://cdn-01.digbihealth.com/imgs/reports/gut-monitoring/icon_report-toc-intolerances.svg",
+        "code": "FOODTOLERANCE",
+        "traits": [
+          13,
+          14,
+          15
+        ],
+        "commonTraits": [],
+        "summary": null,
+        "insight": null,
+        "link": null,
+        "categoryScore": null,
+        "categoryRisk": null,
+        "sampleDate": null,
+        "pastCategoryScores": null
+      },
+      {
+        "id": 10,
+        "name": "Blood Sugar and Appetite",
+        "iconUrl": "https://digbi-cdn-01.s3.us-east-1.amazonaws.com/imgs/reports/gut-monitoring/icon_report-toc-blood-sugar.svg",
+        "code": "BLOODSUGARANDAPPETITE",
+        "traits": [
+          27,
+          28
+        ],
+        "commonTraits": [
+          7,
+          8,
+          9
+        ],
+        "summary": null,
+        "insight": [
+          {
+            "heading": "Food Insights",
+            "content": "- Incorporate anti-inflammatory foods, such as leafy greens, and berries, to support a balanced gut environment.\n - Choose fiber-rich foods, like whole grains, legumes, and vegetables, to promote the production of short-chain fatty acids that aid GLP-1 release.\n- Minimize processed foods, added sugars, and refined carbs that may disrupt gut health and hinder GLP-1 modulation."
+          },
+          {
+            "heading": "Lifestyle Insights",
+            "content": "- Engage in moderate exercise, such as walking or cycling, to stimulate GLP-1 production and support metabolic health.\n- Practice stress-reducing activities like mindfulness or yoga, as stress can negatively impact gut health and hormone regulation.\n- Good sleep supports gut function and helps maintain balanced GLP-1 levels, contributing to better blood sugar control and appetite management."
+          }
+        ],
+        "link": null,
+        "categoryScore": null,
+        "categoryRisk": null,
+        "sampleDate": null,
+        "pastCategoryScores": null
+      }
+    ],
+    "traits": [
+      {
+        "id": 7,
+        "name": "Acetate",
+        "code": "ACETATE",
+        "adviseType": "HIGH_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 27.3448275862069,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to produce acetate, we analyzed the abundance of 5 different bacterial genes involved in acetate synthesis. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Nutrients(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31426593/"
+            }
+          ]
+        },
+        "what": "Acetate is like a peacekeeper. It calms your gut, protects the lining, and helps keep your gut-brain connection strong.",
+        "impact": "Low acetate is linked to brain fog, inflammation, and poor mood. It's crucial for gut lining integrity and supporting brain energy.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following sources can help support the growth of Acetate-Producing bacteria in the gut:"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 1 and  2"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 1  and  2"
+          },
+          {
+            "heading": "Omega-3 rich foods:",
+            "content": "Salmon\nTuna\nFlax seeds"
+          },
+          {
+            "heading": "Other sources:",
+            "content": "Lean proteins\nFermented foods"
+          },
+          {
+            "heading": null,
+            "content": "Check out your 'Go-to Superfoods' list in the Personalized Wellness Report to see the best options for your unique body!"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "How Short-Chain Fatty Acids Affect Health and Weight",
+            "url": "https://www.healthline.com/nutrition/short-chain-fatty-acids-101"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of Acetate-producing bacteria."
+      },
+      {
+        "id": 2,
+        "name": "Akkermansia",
+        "code": "AKKERMANSIA",
+        "adviseType": "BELOW_DETECTION",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 1.0,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals.",
+          "4. We couldn't determine your results for this sample because it was below the detection limit."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine your Akkermansia result, we analyzed the abundance of a bacteria called Akkermanisa on your gut and compared it to a group of healthy Americans.",
+          "links": [
+            {
+              "name": "Microbial Biotechnology(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31006995/"
+            },
+            {
+              "name": "Gut Microbes(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/26900906/"
+            },
+            {
+              "name": "Journal of Clinical Biochemistry and Nutrition",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/30087541/"
+            }
+          ]
+        },
+        "what": "This bacteria is like a bodyguard for your gut wall. It keeps the gut lining strong so harmful stuff doesn't leak into your body.",
+        "impact": "A strong gut lining prevents inflammation, obesity, and metabolic problems.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "Vegetables that contain anthocyanins, a pigment found in plants, can help increase Akkermansia levels.\n\n The following foods can  help increase Akermansia Levels:"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Reb, blue and purple colored Group 1 and 2 vegetables\nGarlic"
+          },
+          {
+            "heading": "Other sources:",
+            "content": "Flax seeds\nDark chocolate\nGreen tea\nOily fish"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "Polyphenols-containing foods",
+            "url": "https://www.healthline.com/health/polyphenols-foods#TOC_TITLE_HDR_1"
+          },
+          {
+            "name": "Anthocyanin-containing foods",
+            "url": "https://www.healthline.com/nutrition/anthocyanin#foods-list"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of Akkermansia."
+      },
+      {
+        "id": 13,
+        "name": "Alcohol Metabolism",
+        "code": "ALCOHOLMETABOLISM",
+        "adviseType": "MODERATE_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 50.7661006577941,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to break down alcohol, we analyzed the abundance of 4 different bacterial genes involved in alcohol degradation. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Current Obesity Reports(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/25741455/"
+            },
+            {
+              "name": "Alcohol and Alcoholism(Journal)",
+              "url": "https://academic.oup.com/alcalc/article/51/4/395/1740626"
+            },
+            {
+              "name": "Alcohol: Clinical and Experimental Research(Journal)",
+              "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1530-0277.1997.tb03795.x"
+            }
+          ]
+        },
+        "what": "Some bacteria help break down alcohol. But how well you do this varies.",
+        "impact": "Better breakdown = less hangover, less liver stress. Poor breakdown = higher risk of health issues from alcohol.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "Regardless of your results, Digbi Health does not recommend any level of alcohol consumption. Alcohol is inflammatory, obesogenic, and carcinogenic."
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "Effects of alcohol on body",
+            "url": "https://www.healthline.com/health/alcohol/effects-on-body#long-term"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a moderate abundance of alcohol-degrading bacteria."
+      },
+      {
+        "id": 37,
+        "name": "Arginine Breakdown",
+        "code": "ARGININEDEGRADATION",
+        "adviseType": "BELOW_DETECTION",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 1.0,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals.",
+          "4. We couldn't determine your results for this sample because it was below the detection limit."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to break down Arginine, we analyzed the abundance of 4 different bacterial genes involved in Arginine degradation.",
+          "links": [
+            {
+              "name": "Current Developments in Nutrition (Journal)",
+              "url": "https://cdn.nutrition.org/article/S2475-2991(23)26622-6/fulltext"
+            },
+            {
+              "name": "Nutrients (Journal)",
+              "url": "https://www.mdpi.com/2072-6643/7/4/2930"
+            }
+          ]
+        },
+        "what": "Arginine is a nutrient your gut bacteria help break down. When they do this well, they create helpful signals that support energy and metabolism.",
+        "impact": "A gut that breaks down arginine well can help your body burn fat, keep blood sugar stable, and improve circulation. This process works best when arginine-rich foods are eaten with the right kind of fiber, which helps your gut microbes do their job better.",
+        "insight": null,
+        "insightLinks": null,
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of Arginine-degrading bacteria."
+      },
+      {
+        "id": 17,
+        "name": "Bacterial Diversity",
+        "code": "BACTERIALDIVERSITY",
+        "adviseType": "LOW_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 69.0122910840866,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine your bacterial diversity, we measured the number of bacterial species and their abundance in your gut and compared them to a group of healthy Americans.",
+          "links": [
+            {
+              "name": "Frontiers in Microbiology(Journal)",
+              "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6987436/"
+            },
+            {
+              "name": "Sports Medicine(Journal)",
+              "url": "https://link.springer.com/article/10.1007/s40279-022-01696-x"
+            }
+          ]
+        },
+        "what": "Think of your gut like a rainforest. The more kinds of plants and animals (bacteria) it has, the better it can handle stress and stay balanced. A diverse microbiome means your gut is more resilient and supports everything from immunity to digestion.",
+        "impact": "Higher diversity = stronger immunity, better digestion, and less inflammation. Low diversity is linked to many chronic diseases and poor gut resilience.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "Fermented foods can help improve bacterial diversity.\n\nCheck out the Digbi Food Guide to learn more about how to include them in your daily meals."
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "How to eat for a diverse microbiota",
+            "url": "https://www.gutmicrobiotaforhealth.com/how-to-eat-for-a-diverse-microbiota/"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have high microbial diversity."
+      },
+      {
+        "id": 3,
+        "name": "Bifidobacterium",
+        "code": "BIFIDOBACTERIUM",
+        "adviseType": "MODERATE_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 36.3343751842897,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine your Bifidobacterium result, we analyzed the abundance of a bacteria called Bifidobacterium in your gut and compared it to a group of healthy Americans.",
+          "links": [
+            {
+              "name": "Scientific Reports(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31796826/"
+            }
+          ]
+        },
+        "what": "This bacteria makes vitamins and keeps your tummy calm. It's also great at fighting off bad bugs.",
+        "impact": "It reduces gut inflammation and is linked to better digestion and mental well-being.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods can help improve Bifidobacterium levels:"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 1 - leeks\nGroup  2 - artichokes, asparagus, onion"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 1 and 2"
+          },
+          {
+            "heading": "Other sources:",
+            "content": "Fermented Foods, garlic"
+          },
+          {
+            "heading": null,
+            "content": "Check the Digbi Food Guide for a  complete list of fermented foods and Group 1 and 2 vegetables and fruits."
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "Why Bifidobacteria Are Good?",
+            "url": "https://www.healthline.com/nutrition/why-bifidobacteria-are-good"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a moderate abundance of Bifidobacterium."
+      },
+      {
+        "id": 27,
+        "name": "Bile Acid Metabolism",
+        "code": "BILEACIDMETABOLISM",
+        "adviseType": "HIGH_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 28.4661190965092,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to produce seondary bile acids, we analyzed the abundance of 7 different bacterial genes involved in secondary bile acid synthesis. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Frontiers in Pharmacology",
+              "url": "https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2022.1027212/full"
+            },
+            {
+              "name": "Molecular Metabolism",
+              "url": "https://www.sciencedirect.com/science/article/pii/S2212877818301194"
+            }
+          ]
+        },
+        "what": "Gut bacteria help turn bile into special chemicals that control hunger and blood sugar.",
+        "impact": "Good levels support GLP-1 (a hormone that reduces hunger and improves insulin). Low levels = cravings, unstable blood sugar.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods can help support the growth of Bile Acids Metabolizing bacteria in the gut:"
+          },
+          {
+            "heading": "Vegetables",
+            "content": "Group 1 and 2"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 1 and 2"
+          },
+          {
+            "heading": "Other sources::",
+            "content": "Beans\nDairy\nLean proteins\nOmega-3 rich foods\nFermented foods\nGhee"
+          },
+          {
+            "heading": null,
+            "content": "Check out your 'Go-to Superfoods' list in your Personalized Wellness Report to see the best options for your unique body!"
+          }
+        ],
+        "insightLinks": null,
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of bile acids metabolizing bacteria."
+      },
+      {
+        "id": 8,
+        "name": "Butyrate",
+        "code": "BUTYRATE",
+        "adviseType": "HIGH_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 23.7096774193548,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to produce butyrate, we analyzed the abundance of 5 different bacterial genes involved in butyrate synthesis. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Gut(Journal)",
+              "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1382360/"
+            },
+            {
+              "name": "BMC Systems Biology(Journal)",
+              "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6296070/"
+            },
+            {
+              "name": "mBio(Journal)",
+              "url": "https://journals.asm.org/doi/10.1128/mbio.00889-14"
+            }
+          ]
+        },
+        "what": "Butyrate is your gut's superhero. It feeds gut cells, cools down inflammation, and even helps protect your brain.",
+        "impact": "It strengthens the gut wall, supports mental health, and reduces the risk of digestive issues like IBS and leaky gut. It's also a key anti-inflammatory molecule.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods can help support the growth of Butyrate-Producing bacteria in the gut:"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 1  and  2"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 1  and  2"
+          },
+          {
+            "heading": "Other sources:",
+            "content": "Beans\nDairy\nLean proteins\nOmega-3 rich foods\nFermented foods\nGhee"
+          },
+          {
+            "heading": null,
+            "content": "Check out your 'Go-to Superfoods' list in your Personalized Wellness Report to see the best options for your unique body!"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "What is Butyric Acid and its benefits",
+            "url": "https://www.healthline.com/health/butyric-acid"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of Butyrate-producing bacteria."
+      },
+      {
+        "id": 4,
+        "name": "Christensenella",
+        "code": "CHRISTENSENELLA",
+        "adviseType": "HIGH_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 4.1812865497076,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine your Christensenella result, we analyzed the abundance of a bacteria called Christensenella in your gut and compared it to a group of healthy Americans.",
+          "links": [
+            {
+              "name": "BMC Biology(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31660948/"
+            }
+          ]
+        },
+        "what": "Think of this as a \"lean coach.\" It helps your body avoid storing too much fat and keeps your metabolism in check.",
+        "impact": "More Christensenella = lower body weight and better metabolic health.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods can help increase  Christensenella levels:"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 2"
+          },
+          {
+            "heading": "Resistant starches:",
+            "content": "Legumes\nBeans"
+          },
+          {
+            "heading": "Other sources:",
+            "content": "Grapes\nBerries\nNuts\nOily fish\nDairy"
+          },
+          {
+            "heading": null,
+            "content": "Check the Digbi Food Guide for a full list of Group 2 vegetables and for instructions on how to prepare resistant starches."
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "Weight influenced by gut bacteria",
+            "url": "https://www.medicalnewstoday.com/articles/285122#Increasing-certain-strain-of-bacteria-in-the-gut-could-reduce,-prevent-obesity"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of Christensenella."
+      },
+      {
+        "id": 5,
+        "name": "Faecalibacterium",
+        "code": "FAECALIBACTERIUM",
+        "adviseType": "LOW_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 68.9707977811528,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine your Faecalibacterium result, we analyzed the abundance of a bacteria called Faecalibacterium in your gut and compared it to a group of healthy Americans.",
+          "links": [
+            {
+              "name": "New Microbes and New Infections(Journal)",
+              "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8365382/"
+            }
+          ]
+        },
+        "what": "It produces butyrate-a healing compound that cools down gut inflammation.",
+        "impact": "Low levels may lead to gut discomfort and inflammation. High levels = happy, calm gut.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods can help improve Faecalibacterium  levels:"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 1 & Group 2"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 2  - golden Kiwi"
+          },
+          {
+            "heading": "Other sources:",
+            "content": "Nuts\nLegumes\nBeans\nDairy\nGarlic"
+          },
+          {
+            "heading": null,
+            "content": "Check out your 'Go-to Superfoods' list in your Personalized Wellness Report to see the best options for your unique body!"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "How walnuts benefit your gut bacteria",
+            "url": "https://www.medicalnewstoday.com/articles/321744#Walnuts-raise-levels-of-beneficial-metabolite"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a high abundance of Faecalibacterium."
+      },
+      {
+        "id": 11,
+        "name": "GABA",
+        "code": "GABA",
+        "adviseType": "HIGH_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 11.2857142857143,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to produce GABA, we analyzed the abundance of one key bacterial gene involved in making GABA. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Journal of Medicinal Food",
+              "url": "https://www.liebertpub.com/doi/10.1089/jmf.2014.7000"
+            },
+            {
+              "name": "Nature Microbiology(Journal)",
+              "url": "https://europepmc.org/article/MED/30531975"
+            }
+          ]
+        },
+        "what": "GABA (gamma-aminobutyric acid) is your gut's \"calm-down\" signal. It helps relax your brain and body.",
+        "impact": "Supports restful sleep, reduces anxiety, and helps with focus and memory.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods support the growth of GABA-producing bacteria in the gut:"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 1 and 2"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 2"
+          },
+          {
+            "heading": "Proteins:",
+            "content": "Chicken, lean-cut beef, fish, eggs"
+          },
+          {
+            "heading": "Other:",
+            "content": "Nuts, seeds, beans, green tea, and fermented foods"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "What does GABA do?",
+            "url": "https://www.healthline.com/health/gamma-aminobutyric-acid"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of GABA-producing bacteria."
+      },
+      {
+        "id": 14,
+        "name": "Gluten Metabolism",
+        "code": "GLUTENSENSITIVITY",
+        "adviseType": "HIGH_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 19.6666666666667,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to break down gluten, we analyzed the abundance of one key bacterial gene involved in gluten degradation. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Applied Microbiology and Biotechnology(Journal)",
+              "url": "https://link.springer.com/article/10.1007/s00253-021-11263-5"
+            },
+            {
+              "name": "PLOS ONE(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/21957450/"
+            },
+            {
+              "name": "Wheat and Rice in Disease Prevention and Health(Book)",
+              "url": "https://www.sciencedirect.com/science/article/pii/B9780124017160000131"
+            }
+          ]
+        },
+        "what": "These microbes help digest gluten (the stuff that makes bread dough stretchy).",
+        "impact": "If you don't have enough of these, gluten can cause bloating, fatigue, and gut irritation.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods support the growth of gluten-degrading bacteria:"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 1 - leeks, radish\nGroup 2 - Jerusalem artichokes/sunchokes, onion, and turnips\nGroup 3 - carrots, beets, potatoes"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 2 - Pineapple, papaya, kiwi"
+          },
+          {
+            "heading": "Fermented foods:",
+            "content": "Sauerkraut, kimchi, yogurt, kefir, miso"
+          },
+          {
+            "heading": "Herbs/Spices:",
+            "content": "Garlic, ginger, turmeric"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "A critical look at Gluten Sensitivity",
+            "url": "https://www.healthline.com/nutrition/gluten-sensitivity-is-real#related-disorders"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of gluten-degrading bacteria."
+      },
+      {
+        "id": 16,
+        "name": "Hydrogen Sulfide Gas",
+        "code": "HYDROGENSULFIDEGAS",
+        "adviseType": "MODERATE_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 60.2028985507246,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to produce hydrogen sulfide gas, we analyzed the abundance of 8 different bacterial genes involved in making hydrogen sulfide. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Cells(Journal)",
+              "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7140700"
+            },
+            {
+              "name": "FEMS Microbiology Ecology(Journal)",
+              "url": "https://academic.oup.com/femsec/article/40/2/107/536040"
+            },
+            {
+              "name": "Alimentary Pharmacology & Therapeutics(Journal)",
+              "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-2036.2012.05007.x"
+            }
+          ]
+        },
+        "what": "A little bit of this gas protects your gut lining. Too much, though, causes inflammation.",
+        "impact": "High levels are linked to digestive diseases. Healthy balance supports gut health and prevents leaky gut.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods help reduce the presence of hydrogen sulfide gas-producing bacteria::"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 1 -  celery, mushrooms, cucumbers, lettuce, bamboo shoots\nGroup  2 - bell peppers, egg plants, tomato, zucchini"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 1 - blueberries\nGroup 2 - apple, melon, orange, peaches, pears, watermelon"
+          },
+          {
+            "heading": "Proteins:",
+            "content": "Meat in moderation - consume animal proteins along with plant fibers\nFish - oysters, sardines, salmon\nDark meat - chicken, turkey"
+          },
+          {
+            "heading": "Nuts:",
+            "content": "Macadamia nuts"
+          },
+          {
+            "heading": "Herbs::",
+            "content": "Ginger"
+          },
+          {
+            "heading": "Probiotics::",
+            "content": "Kefir, kombucha, miso, natto, tempeh, and fermented vegetables"
+          },
+          {
+            "heading": "Beverages::",
+            "content": "Herbal tea"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "Bacteria's role in the discomfort caused by abdominal gases",
+            "url": "https://www.gutmicrobiotaforhealth.com/researchers-identify-the-bacteria-responsible-for-the-discomfort-caused-by-abdominal-gases/"
+          },
+          {
+            "name": "Foods High in Sulfur",
+            "url": "https://www.webmd.com/diet/foods-high-in-sulfur"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a moderate abundance of hydrogen sulfide gas-producing bacteria."
+      },
+      {
+        "id": 26,
+        "name": "Imidazole Propionate",
+        "code": "IMIDAZOLEPROPIONATE",
+        "adviseType": "MODERATE_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 45.8601398601399,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to produce imidazole propionate, we analyzed the abundance of 2 different bacterial genes involved inmaking imidazole propionate. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Cell(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/30401435/"
+            },
+            {
+              "name": "Nature Communications(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/33208748/"
+            }
+          ]
+        },
+        "what": "This is a \"troublemaker\" molecule made by some gut bacteria that blocks insulin action.",
+        "impact": "Can lead to insulin resistance, prediabetes, and makes diabetes meds (like metformin) less effective.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods help reduce the presence of imidazole propionate-producing bacteria:"
+          },
+          {
+            "heading": "Magnesium rich foods:",
+            "content": "Dark leafy vegetables\nMushrooms"
+          },
+          {
+            "heading": "Proteins:",
+            "content": "Chicken\nTurkey\nFish (mackerel, tuna, crab, mollusks)"
+          },
+          {
+            "heading": "Nuts & Seeds:",
+            "content": "Hemp seeds, pumpkin seeds, squash seeds, flax seeds, brazil nuts, sesame seeds, chia seeds, sunflower seeds, cashews, almonds, and pine nut"
+          },
+          {
+            "heading": "Restrict intake of:",
+            "content": "Cheese, eggs, milk, high carbohydrate foods, high saturated fats (red meat)"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "How Gut microbiota affects insulin response",
+            "url": "https://www.nutritioninsight.com/news/gut-microbiota-can-affect-insulin-response-study-finds.html"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a moderate abundance of Imidazole propionate-producing bacteria."
+      },
+      {
+        "id": 6,
+        "name": "Lactobacillus",
+        "code": "LACTOBACILLUS",
+        "adviseType": "BELOW_DETECTION",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 1.0,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals.",
+          "4. We couldn't determine your results for this sample because it was below the detection limit."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine your Lactobacillus result, we analyzed the abundance of a bacteria called Lactobacillus in your gut and compared it to a group of healthy Americans.",
+          "links": [
+            {
+              "name": "Applied and Environmental Microbiology(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/10473372/"
+            },
+            {
+              "name": "Journal of Clinical Pathology",
+              "url": " https://pubmed.ncbi.nlm.nih.gov/26578541/"
+            }
+          ]
+        },
+        "what": "This one is a stress buster! It helps make GABA, which keeps your mood stable and sleep deep.",
+        "impact": "Supports digestion, boosts immunity, and helps regulate stress and anxiety.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods can help improve Lactobacillus levels:"
+          },
+          {
+            "heading": "Fermented foods",
+            "content": null
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 1 -  leeks\nGroup 2  - Jerusalem artichokes, asparagus, onion, garlic"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 1  and 2"
+          },
+          {
+            "heading": null,
+            "content": "Check the Digbi Food Guide for a full list of fermented foods and Group 1 and 2  fruits."
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "Lactobacillus Uses and Risks",
+            "url": "https://www.webmd.com/vitamins-and-supplements/lactobacillus-uses-and-risks"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of Lactobacillus."
+      },
+      {
+        "id": 15,
+        "name": "Lactose Tolerance",
+        "code": "LACTOSEINTOLERANCE",
+        "adviseType": "HIGH_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 27.3255224825839,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to break down lactose, we analyzed the abundance of one key bacterial gene involved in lactose degradation. To learn more, see the following:",
+          "links": [
+            {
+              "name": "The American Journal of Clinical Nutrition",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/11157352/"
+            },
+            {
+              "name": "Nutrition in Clincal Practice (Journal)",
+              "url": "https://aspenjournals.onlinelibrary.wiley.com/doi/abs/10.1177/0884533612440289"
+            },
+            {
+              "name": "Nutrients(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/32443748/"
+            }
+          ]
+        },
+        "what": "Some bacteria can break down milk sugar (lactose), even if your body doesn't make enough of the enzyme.",
+        "impact": "Helps prevent bloating, cramps, or diarrhea when you eat dairy.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods support the growth of lactose-degrading bacteria in the gut::"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group  2 -  asparagus, Jerusalem artichokes"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 1 - cranberries\nGroup 2 - apples, kiwis,  grapes"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "What is Lactose Intolerance?",
+            "url": "https://www.healthline.com/health/lactose-intolerance"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut biome indicates that you have a low abundance of lactose-degrading bacteria."
+      },
+      {
+        "id": 38,
+        "name": "Lysine Breakdown",
+        "code": "LYSINEDEGRADATION",
+        "adviseType": "HIGH_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 9.45277507228526,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to break down Lysine, we analyzed the abundance of 6 different bacterial genes involved in Lysine degradation.",
+          "links": [
+            {
+              "name": "American Society for Microbiology mSphere (Journal)",
+              "url": "https://journals.asm.org/doi/10.1128/mbio.00889-14"
+            },
+            {
+              "name": "Nutrients (Journal)",
+              "url": "https://www.mdpi.com/2072-6643/7/4/2930"
+            }
+          ]
+        },
+        "what": "Lysine is an important building block your body needs. Your gut bacteria can turn it into fuel that helps your body stay active and balanced.",
+        "impact": "Breaking down lysine well helps your body use fat for energy and keeps inflammation down. The benefits are even stronger when your protein intake is combined with gut-friendly fiber based on your sensitivities.",
+        "insight": null,
+        "insightLinks": null,
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of Lysine-degrading bacteria."
+      },
+      {
+        "id": 28,
+        "name": "mDPP4 (Microbial DPP4)",
+        "code": "MDPP4(MICROBIALDPP4)",
+        "adviseType": "LOW_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 72.2105263157895,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to produce DPP4, we analyzed the abundance of one bacterial gene involved in DPP4 synthesis. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Nature",
+              "url": "https://www.nature.com/articles/s41392-023-01694-z"
+            }
+          ]
+        },
+        "what": "Some bacteria make an enzyme that \"turns off\" your fullness hormone (GLP-1) too early.",
+        "impact": "Too much DPP4 can make it harder to control appetite and blood sugar-especially if you have inflammation.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods can help support a healthy gut lining and may help prevent gut inflammation:"
+          },
+          {
+            "heading": "Vegetables",
+            "content": "Group 1 and Group 2"
+          },
+          {
+            "heading": "Other sources:",
+            "content": "Omega-3 rich foods, bone broth, fermented foods, polyphenol-rich foods, anti-inflammatory spices, healthy fats"
+          },
+          {
+            "heading": "Foods to Avoid:",
+            "content": "Processed foods, refined sugars, artificial sweeteners, gluten (if sensitive), excess caffeine and alcohol, and high-FODMAP foods (if sensitive)"
+          },
+          {
+            "heading": null,
+            "content": "Check out your 'Go-to Superfoods' list in your Personalized Wellness Report to see the best options for your unique body!"
+          }
+        ],
+        "insightLinks": null,
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of DPP4-producing bacteria."
+      },
+      {
+        "id": 10,
+        "name": "Polyamines",
+        "code": "POLYAMINES",
+        "adviseType": "LOW_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 72.2233128834356,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to produce 5 types of polyamines, we analyzed the abundance of 8 different bacterial genes that are involved in polyamine synthesis. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Journal of Biological Chemistry",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/25593318/"
+            },
+            {
+              "name": "Clinical Nutrition Journal",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15784477/"
+            },
+            {
+              "name": "Cell Physiology(Journal)",
+              "url": "https://journals.physiology.org/doi/abs/10.1152/ajpcell.1982.243.5.c212"
+            }
+          ]
+        },
+        "what": "These are like cellular anti-aging agents. They help your body grow new cells and stay young.",
+        "impact": "They reduce inflammation, support a healthy weight, and even have anti-cancer potential.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods can help support the growth of Polyamine-Producing bacteria in the gut:"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 1 & Group 2"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 1 and 2"
+          },
+          {
+            "heading": "Other sources:",
+            "content": "Lean proteins\nFish\nOmega-3 rich foods\nFermented foods\nGarlic"
+          },
+          {
+            "heading": null,
+            "content": "Check out your 'Go-to Superfoods' list in your Personalized Wellness Report to see the best options for your unique body!"
+          }
+        ],
+        "insightLinks": null,
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a high abundance of Polyamines-producing bacteria."
+      },
+      {
+        "id": 9,
+        "name": "Propionate",
+        "code": "PROPIONATE",
+        "adviseType": "MODERATE_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 39.2307692307692,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes in producing propionate, we analyzed the abundance of 7 different bacterial genes involved in propionate synthesis. To learn more, see the following:",
+          "links": [
+            {
+              "name": "Nutrition Reviews(Journal)",
+              "url": "https://academic.oup.com/nutritionreviews/article/69/5/245/1934841"
+            },
+            {
+              "name": "Environmental Microbiology(Journal)",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/27928878/"
+            }
+          ]
+        },
+        "what": "Propionate is a hunger helper. It sends \"I'm full\" signals to your brain and helps your body manage sugar and fat.",
+        "impact": "It reduces inflammation, helps regulate your appetite, and improves insulin sensitivity - all great for metabolic and emotional balance.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods can help support the growth of Propionate-Producing bacteria in the gut:"
+          },
+          {
+            "heading": "Vegetables:",
+            "content": "Group 1  & Group 2"
+          },
+          {
+            "heading": "Fruits:",
+            "content": "Group 1 and  2"
+          },
+          {
+            "heading": "Omega-3 rich foods:",
+            "content": "Salmon\nFlax seeds"
+          },
+          {
+            "heading": "Other sources:",
+            "content": "Lean proteins\nDairy\nFermented foods\nBlack tea\n Garlic"
+          },
+          {
+            "heading": null,
+            "content": "Check out your 'Go-to Superfoods' list in your Personalized Wellness Report to see the best options for your unique body!"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "How Short-Chain Fatty Acids Affect Health and Weight",
+            "url": "https://www.healthline.com/nutrition/short-chain-fatty-acids-101#TOC_TITLE_HDR_4"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a moderate abundance of Propionate-producing bacteria."
+      },
+      {
+        "id": 12,
+        "name": "Tryptophan Support",
+        "code": "TRYPTOPHAN",
+        "adviseType": "HIGH_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 27.2442244224422,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to produce tryptophan, we analyzed the abundance of 6 different bacterial genes involved in making tryptophan. To learn more, see the following:",
+          "links": [
+            {
+              "name": "International Journal of Tryptophan Research",
+              "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2908021/"
+            },
+            {
+              "name": "International Journal of Tryptophan Research",
+              "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6158605/"
+            },
+            {
+              "name": "Advances in Nutrition(Journal)",
+              "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7231603/"
+            }
+          ]
+        },
+        "what": "Tryptophan is the starter block for serotonin (the \"feel-good\" brain chemical) and melatonin (the sleep hormone).",
+        "impact": "Low tryptophan is linked to depression, poor sleep, and digestion issues.",
+        "insight": [
+          {
+            "heading": null,
+            "content": "The following foods support the growth of tryptophan-producing bacteria in the gut:"
+          },
+          {
+            "heading": "Resistant Starches:",
+            "content": "Beans - white beans, kidney beans, pinto beans, or black beans. Remember to follow the cooking process outlined in the Food Guide."
+          },
+          {
+            "heading": "Proteins:",
+            "content": "Meat chicken, lean-cut beef, and pork\nFish\nEggs\nSoy products - tofu, soy milk, edamame, soybeans, or tempeh"
+          },
+          {
+            "heading": "Nuts & Seeds:",
+            "content": "Pumpkin seeds, chia seeds, sesame seeds, flax seeds, walnuts, and hemp seeds"
+          },
+          {
+            "heading": "Probiotics:",
+            "content": "Yogurt, buttermilk, kefir, sauerkraut, kimchi, natto, cottage cheese, fermented pickles, tempeh, and miso"
+          }
+        ],
+        "insightLinks": [
+          {
+            "name": "Tryptophan Uses, benefits and foods",
+            "url": "https://www.healthline.com/health/tryptophan"
+          }
+        ],
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of Tryptophan-producing bacteria."
+      },
+      {
+        "id": 39,
+        "name": "Tryptophan Breakdown",
+        "code": "TRYPTOPHANDEGRADATION",
+        "adviseType": "HIGH_RISK",
+        "adviseDescription": null,
+        "rangeScale": {
+          "min": null,
+          "max": null,
+          "value": 8.96075991636992,
+          "typicalRangeText": null,
+          "overallRangeText": null,
+          "lastSampleDate": "2023-08-28",
+          "toolTip": null,
+          "comparedValue": null,
+          "comparedValueDisplay": null
+        },
+        "tooltip": [
+          "1. This is your likelihood based on your gut microbiome.",
+          "2. This is your sample collection date.",
+          "3. Here's how your sample compares to a cohort of healthy American individuals."
+        ],
+        "pastSampleDescription": null,
+        "gutSamples": null,
+        "analysis": {
+          "title": "Gut biome analysis",
+          "text": "To determine the potential of your gut microbes to break down Tryptophan, we analyzed the abundance of 1 bacterial gene involved in Tryptophan degradation.",
+          "links": [
+            {
+              "name": "Nature Microbiology (Journal)",
+              "url": "https://www.nature.com/articles/s41564-024-01737-3"
+            },
+            {
+              "name": "Nature Communications (Journal)",
+              "url": " https://www.nature.com/articles/s41467-018-05470-4"
+            },
+            {
+              "name": "Frontiers Immunology (Journal)",
+              "url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2020.00557/full"
+            }
+          ]
+        },
+        "what": "Tryptophan helps your brain and gut work together. When your gut microbes break it down, they send signals that support mood, sleep, and digestion.",
+        "impact": "If your gut processes tryptophan well, you may experience better emotional balance, sleep quality, and metabolism. These benefits are boosted when your meals include the right fiber for your digestive system.",
+        "insight": null,
+        "insightLinks": null,
+        "riskDescription": "The recent sample of your gut microbiome indicates that you have a low abundance of Tryptophan-degrading bacteria."
+      }
+    ],
+    "overallScore": null,
+    "video": null,
+    "viewedDate": "2025-06-25",
+    "generatedDate": "Jun 11, 2025",
+    "disclaimer": "The information on this report is for educational and informational use only.\n\nThe information is not intended to be used by the customer for any diagnostic purpose and is not a substitute for professional medical advice.\n\nYou should always seek the advice of your physician or other healthcare providers with any questions you may have regarding diagnosis, cure, treatment, mitigation, or prevention of any disease or other medical condition or impairment or the status of your health.",
+    "foodRecommendation": null,
+    "pdfUrl": "https://prod-west.s3.us-west-1.amazonaws.com/v2/report/pdf/7747/SangeetSaurabh_GutMonitoring_traits_08-28-2023.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250904T073154Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=AKIAJVV3NLJEB6JK2SNQ%2F20250904%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Signature=0c1becfa7071a8f3080a1ce10bbc08a6e956c321edf9bf952409c9ef271db4cd",
+    "healthPdfUrl": null,
+    "locale": "en",
+    "summaryReport": null
+  },
+  "status": 200,
+  "timestamp": 1756971114461,
+  "code": null,
+  "errorMessageList": null,
+  "includes": null,
+  "excludes": null
+}

@@ -1,35 +1,68 @@
-# Large database files
-claims.db
-*.db
-
-# Python cache
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Virtual environments
-venv/
+*.so
+.Python
 env/
+venv/
 ENV/
+build/
+dist/
+*.egg-info/
+*.egg
 
-# IDE files
+# Environment variables (CRITICAL - contains API keys)
+.env
+*.env
+.env.*
+env.example
+
+# Database files (don't push local DBs)
+*.db
+*.sqlite
+*.sqlite3
+v1/data/*.db
+v1/ai-agent-service-staging/data/*.db
+
+# Logs
+logs/
+*.log
+v1/logs/*.log
+
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# OS files
 .DS_Store
-Thumbs.db
 
-# Logs
-*.log
+# Pickle files (model files - too large for git)
+*.pkl
+v1/ai-agent-service-staging/tools/tools_config/*.pkl
+v1/src/agents/tools/*.pkl
 
-# Environment variables
-.env
-.env.local
-.env.production
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
 
 # Temporary files
 *.tmp
-*.temp
+tmp/
+temp/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Backup files
+*.bak
+*~
+
+# Documentation temp files
+*.md~

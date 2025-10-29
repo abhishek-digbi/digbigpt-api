@@ -1,0 +1,293 @@
+USER_DATA_AGENT:
+  name: USER_DATA_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: user_profile_info
+  tools:
+    - get_coach_added_exclusions
+    - get_primary_motivation
+    - get_ibs_score
+    - get_nd_scores_last_n_days
+    - get_BMI
+    - get_dietary_restrictions
+    - get_allergies_and_intolerances
+    - get_meal_ids_last_seven_days
+    - get_journey_events
+  temperature: 0.1
+  top_p: 0.9
+
+ASK_DIGBI_INTENT_CLASSIFIER_AGENT:
+  name: ASK_DIGBI_INTENT_CLASSIFIER_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: Ask_Digbi_Intent_Classifier
+  text_format: json
+  temperature: 0.1
+  top_p: 0.9
+
+ASK_DIGBI_SUMMARIZER_AGENT:
+  name: ASK_DIGBI_SUMMARIZER_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: digbi_response_summarizer
+  # temperature and top_p omitted (NULL in SQL)
+
+CGM_SUMMARY_REPORT_AGENT:
+  name: CGM_SUMMARY_REPORT_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: cgm_meal_summary_report
+  text_format: string
+  tools:
+    - cgm_glucose_summary
+    - cgm_meals_summary
+  temperature: 0.1
+  top_p: 0.9
+
+ASK_DIGBI_HEALTH_INSIGHTS_AGENT:
+  name: ASK_DIGBI_HEALTH_INSIGHTS_AGENT
+  provider: openai
+  model: gpt-4.1
+  assistant_id: asst_s05hgVoNcIHoIlpkYCRLgD5D
+  langfuse_prompt_key: ask_health_insights_digbi
+  instructions: You are a health insights agent specializing in reports, genetics, gut health, nutrition  information. All responses must strictly refer only to the provided documents in the knowledge base.
+  vector_store_ids:
+    - vs_6818a70d17e88191a8a3d4079c1043d7
+  temperature: 0.1
+  top_p: 0.9
+
+ASK_DIGBI_NUTRITION_AGENT:
+  name: ASK_DIGBI_NUTRITION_AGENT
+  provider: openai
+  model: gpt-4o
+  assistant_id: asst_s05hgVoNcIHoIlpkYCRLgD5D
+  langfuse_prompt_key: ask_nutrition_agent
+  instructions: You are a helpful agent with access to Digbi's Food knowledge base. Based solely on the knowledge base, you have to give feedback to users.
+  tools:
+    - file_search
+    - get_recent_meal_logs
+    - get_meal_feedback
+  vector_store_ids:
+    - vs_6818a00264288191b16f0e54396748d8
+  temperature: 0.1
+  top_p: 0.9
+
+ASK_DIGBI_HEALTH_INSIGHTS_GPT_AGENT:
+  name: ASK_DIGBI_HEALTH_INSIGHTS_GPT_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: ask_health_insights_gpt
+  # temperature and top_p omitted (NULL in SQL)
+
+MEAL_PHOTO_ANALYZER_AGENT:
+  name: MEAL_PHOTO_ANALYZER_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: vision
+  text_format: json
+  # temperature and top_p omitted (NULL in SQL)
+
+MEAL_SENSITIVITIES_IDENTIFIER_AGENT:
+  name: MEAL_SENSITIVITIES_IDENTIFIER_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: identify_sensitivities
+  text_format: json
+  # temperature and top_p omitted (NULL in SQL)
+
+MEAL_DESCRIPTION_UPDATE_WITHOUT_PHOTO_AGENT:
+  name: MEAL_DESCRIPTION_UPDATE_WITHOUT_PHOTO_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: food_categorization_with_no_valid_photo
+  text_format: json
+  # temperature and top_p omitted (NULL in SQL)
+
+MEAL_DESCRIPTION_UPDATE_WITH_PHOTO_AGENT:
+  name: MEAL_DESCRIPTION_UPDATE_WITH_PHOTO_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: update
+  text_format: json
+  # temperature and top_p omitted (NULL in SQL)
+
+MEAL_FEEDBACK_AGENT:
+  name: MEAL_FEEDBACK_AGENT
+  provider: openai
+  model: gpt-4.1
+  assistant_id: asst_s05hgVoNcIHoIlpkYCRLgD5D
+  langfuse_prompt_key: feedback
+  instructions: You are a helpful agent with access to Digbi's Food knowledge base. Based solely on the knowledge base, you have to give feedback to users.
+  vector_store_ids:
+    - vs_6818a00264288191b16f0e54396748d8
+  temperature: 0.1
+  top_p: 0.9
+
+ASK_EVALUATION_AGENT:
+  name: ASK_EVALUATION_AGENT
+  provider: openai
+  model: gpt-4.1
+  assistant_id: asst_s05hgVoNcIHoIlpkYCRLgD5D
+  langfuse_prompt_key: ask_evaluation
+  instructions: You are a helpful agent with access to Digbi's Food knowledge base. Based solely on the knowledge base, you have to give product evaluation to users.
+  vector_store_ids:
+    - vs_6818a00264288191b16f0e54396748d8
+  temperature: 0.1
+  top_p: 0.9
+
+SUPPORT_AGENT:
+  name: SUPPORT_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: support_classifier
+  vector_store_ids:
+    - vs_6836ed00e0088191bf329b7c6ced9f10
+  text_format: json
+  temperature: 0.0
+  top_p: 1.0
+
+PROGRAM_DETAILS_AGENT:
+  name: PROGRAM_DETAILS_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: program_details_agent_instructions
+  vector_store_ids:
+    - vs_6836ed00e0088191bf329b7c6ced9f10
+  text_format: json
+  temperature: 0.0
+  top_p: 1.0
+
+UNIFIED_SUPPORT_AGENT:
+  name: UNIFIED_SUPPORT_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: unified_support_agent
+  vector_store_ids:
+    - vs_68247ee217288191b5913745ec46e81f
+    - vs_68247f0d2b6c81919d00556179b1ab51
+  text_format: json
+  temperature: 0.0
+  top_p: 1.0
+
+PRODUCT_SUPPORT_AGENT:
+  name: PRODUCT_SUPPORT_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: product_support_agent
+  text_format: json
+  vector_store_ids:
+    - vs_68247ee217288191b5913745ec46e81f
+    - vs_6836ed00e0088191bf329b7c6ced9f10
+  temperature: 0.0
+  top_p: 1.0
+
+OPERATIONS_SUPPORT_AGENT:
+  name: OPERATIONS_SUPPORT_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: operations_support_agent
+  text_format: json
+  vector_store_ids:
+    - vs_68247f0d2b6c81919d00556179b1ab51
+    - vs_6836ed00e0088191bf329b7c6ced9f10
+  temperature: 0.1
+  top_p: 0.9
+
+IN_APP_RENEWAL_AGENT:
+  name: IN_APP_RENEWAL_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: in_app_renewal_message
+  instructions: You are a motivational assistant creating personalized health renewal messages. You must be encouraging and only use the data provided.
+  temperature: 0.1
+  top_p: 0.9
+
+# …add additional agents below, following the same schema…
+NORA_RECIPE_AGENT:
+  name: NORA_RECIPE_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: nora_recipe_agent
+  text_format: json
+  temperature: 0.2
+  top_p: 0.9
+
+RECIPE_AGENT:
+  name: RECIPE_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: recipe_agent
+  text_format: json
+  temperature: 0.2
+  top_p: 0.9
+
+NORA_RECIPE_FORMATTER_AGENT:
+  name: NORA_FORMATTER_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: nora_formatter_agent
+  text_format: string
+  temperature: 0.2
+  top_p: 0.9
+EDUTAINMENT_AGENT_GUS:
+  name: EDUTAINMENT_AGENT_GUS
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: edutainment_agent_gus
+  text_format: json
+  temperature: 0.2
+  top_p: 0.9
+  vector_store_ids:
+    - vs_6818a00264288191b16f0e54396748d8
+    - vs_688863145f48819197fe5ad6b739962b
+  tools:
+    - get_meal_ids_last_seven_days
+    - get_journey_events
+# …add additional agents below, following the same schema…
+
+VIDEO_RECOMMENDER_AGENT:
+  name: VIDEO_RECOMMENDER_AGENT
+  provider: openai
+  model: gpt-4.1
+  langfuse_prompt_key: video_recommender_agent
+  temperature: 0.0
+  top_p: 1.0
+  vector_store_ids:
+    - vs_68c95151ba84819199a5897a08f1f1c4
+
+# DigbiGPT Claims Analysis Agents
+DRUG_SPEND_AGENT:
+  name: DRUG_SPEND_AGENT
+  provider: openai
+  model: gpt-4o
+  langfuse_prompt_key: drug_spend_analysis
+  instructions: You are a healthcare claims analyst specializing in medication costs and utilization patterns. Analyze drug spending data and provide actionable insights about cost drivers and utilization trends.
+  tools:
+    - get_top_drug_spend
+    - get_duplicate_medications
+  temperature: 0.1
+  top_p: 0.9
+
+CLINICAL_HISTORY_AGENT:
+  name: CLINICAL_HISTORY_AGENT
+  provider: openai
+  model: gpt-4o
+  langfuse_prompt_key: clinical_history_analysis
+  instructions: You are a healthcare claims analyst specializing in clinical timelines and diagnosis patterns. Analyze member disease history and medication starts to identify clinical trends.
+  tools:
+    - get_member_disease_history
+    - get_gi_new_starts
+  temperature: 0.1
+  top_p: 0.9
+
+COHORT_INSIGHTS_AGENT:
+  name: COHORT_INSIGHTS_AGENT
+  provider: openai
+  model: gpt-4o
+  langfuse_prompt_key: cohort_insights_analysis
+  instructions: You are a population health analyst specializing in disease cohort metrics. Analyze cohort-level data to identify population health trends and opportunities for intervention.
+  tools:
+    - get_disease_cohort_summary
+    - get_top_drug_spend
+  temperature: 0.1
+  top_p: 0.9

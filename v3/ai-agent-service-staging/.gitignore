@@ -1,0 +1,10 @@
+.env
+foodapp/
+*.log
+logs/
+.venv/
+venv/
+.idea/
+*.pyc
+__pycache__/
+__pycache__/logs/
