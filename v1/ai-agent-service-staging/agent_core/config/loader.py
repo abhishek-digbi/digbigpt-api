@@ -1,5 +1,7 @@
 from __future__ import annotations
 import logging
+import yaml
+from pathlib import Path
 
 from utils.db import DBClient
 from .schema import AgentConfig
@@ -41,8 +43,39 @@ def _fetch_agent_row(agent_id: str) -> dict | None:
     finally:
         db.release_conn(conn)
 
+def _load_from_yaml(agent_id: str) -> AgentConfig:
+    """Load agent configuration from YAML file as fallback when database unavailable."""
+    yaml_file = Path(__file__).parent / "agents_seed.yaml"
+    if not yaml_file.exists():
+        raise FileNotFoundError(f"Agents YAML file not found: {yaml_file}")
+    
+    with yaml_file.open("r", encoding="utf-8") as f:
+        data = yaml.safe_load(f) or {}
+    
+    cfg_data = data.get(agent_id)
+    if not cfg_data:
+        raise KeyError(f"Agent '{agent_id}' not found in YAML")
+    
+    # Convert YAML format to AgentConfig
+    return AgentConfig(
+        id=agent_id,
+        name=cfg_data.get("name", agent_id),
+        provider=cfg_data.get("provider", "openai"),
+        model=cfg_data.get("model", "gpt-4o"),
+        langfuse_prompt_key=cfg_data.get("langfuse_prompt_key"),
+        text_format=cfg_data.get("text_format"),
+        assistant_id=cfg_data.get("assistant_id"),
+        instructions=cfg_data.get("instructions"),
+        vector_store_ids=cfg_data.get("vector_store_ids"),
+        tools=cfg_data.get("tools", []),
+        temperature=cfg_data.get("temperature"),
+        top_p=cfg_data.get("top_p"),
+    )
+
 def get_agent_cfg(agent_id: str) -> AgentConfig:
     row = _fetch_agent_row(agent_id)
     if not row:
-        raise KeyError(f"Agent '{agent_id}' not found")
+        # Database not available or agent not found - fallback to YAML
+        logger.info(f"Loading agent {agent_id} from YAML fallback")
+        return _load_from_yaml(agent_id)
     return AgentConfig(**row)
